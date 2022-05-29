@@ -1,6 +1,6 @@
 ---
 title: "Single-cell project"
-author: "Mingze Huang (sharkmanhmz@tamu.edu)"
+author: "Mingze Huang, Christian L. Mueller, Irina Gaynanova"
 date: '2022-05-29'
 output: ioslides_presentation
 ---
@@ -26,6 +26,7 @@ knitr::opts_chunk$set(echo = FALSE)
 Then we reproduce the t-sne from the pre-stored data and code showed in this repository in "new_comparison.R"
 
 ![](from data to t-sne.png)
+
 ## Reproduce the t-sne Figure from the Data but use latentcor before PCA
 
 ![](latentcor before pca.png)
