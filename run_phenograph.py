@@ -1,9 +1,11 @@
 import argparse
 import pandas as pd
+import sys; 
+print(sys.path)
+sys.path.append('C:\\Users\\mingz\\anaconda3\\lib\\site-packages')
+# This script runs Phenograph
+
 import phenograph
-
-# This script runs Phenograph 
-
 # Get input arguments
 parser = argparse.ArgumentParser()
 parser.add_argument('--data', help='Infile (rows = cells, columns = features)')

@@ -10,7 +10,8 @@
 # - calculating significant changes in gene expression with disease
 #
 # For additional code or questions please contact Chris Smillie (cssmillie@gmail.com)
-
+rm(list=ls())
+memory.limit(size=56000)
 
 # --------------
 # 0) Basic setup

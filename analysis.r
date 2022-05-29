@@ -121,7 +121,7 @@ run_phenograph = function(data, k=250){
     write.table(data, file=out, sep='\t', quote=F)
     
     # Run phenograph
-    system(paste0('python ~/code/single_cell/run_phenograph.py --data ', out, ' -k ', k, ' --metric cosine --out ', out))
+    system(paste0('python run_phenograph.py --data ', out, ' -k ', k, ' --metric cosine --out ', out))
     
     # Cleanup tempfile
     clusters = readLines(out)
@@ -215,6 +215,7 @@ run_analysis = function(name, counts, minc=10, ming=250, maxg=1e6, var_regex=NUL
     # Fast PCA
     print('Calculating PCA')
     pc.data = pc.data[intersect(var_genes, rownames(pc.data)),]
+    fwrite(as.data.table(pc.data), file=paste0(name, '.pc.data.txt'), sep='\t')
     pca.obj = rpca(t(pc.data), center=TRUE, scale=TRUE, retx=TRUE, k=num_pcs)
     seur@reductions[['pca']] = CreateDimReducObject(
         embeddings = pca.obj$x %*% diag(pca.obj$sdev**2),
